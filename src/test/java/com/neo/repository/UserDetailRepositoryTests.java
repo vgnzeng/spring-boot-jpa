@@ -19,7 +19,7 @@ import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class UserInfoRepositoryTests {
+public class UserDetailRepositoryTests {
 
 	@Resource
     private UserDetailRepository userDetailRepository;
@@ -27,7 +27,7 @@ public class UserInfoRepositoryTests {
 	@Test
 	public void testUserInfo()  {
 
-		userDetailRepository.save(new UserDetail("2", "New York Address", "Jogging"));
+		userDetailRepository.save(new UserDetail("222", "New York Address", "Jogging"));
 
 		List<UserInfo> userInfos=userDetailRepository.findUserInfo("Jogging");
 		for (UserInfo userInfo:userInfos){
