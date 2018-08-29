@@ -21,6 +21,17 @@ public class UserDetail implements Serializable {
     @Column(nullable = true)
     private String hobby;
 
+    public UserDetail(String userId, String address, String hobby) {
+        super();
+        this.userId = userId;
+        this.address = address;
+        this.hobby = hobby;
+    }
+
+    public UserDetail() {
+        super();
+    }
+
     public Long getId() {
         return id;
     }

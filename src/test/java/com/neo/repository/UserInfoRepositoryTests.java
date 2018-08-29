@@ -1,5 +1,6 @@
 package com.neo.repository;
 
+import com.neo.domain.User;
 import com.neo.domain.UserDetail;
 import com.neo.domain.UserInfo;
 import org.junit.Test;
@@ -12,6 +13,8 @@ import org.springframework.data.domain.Sort;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
+import java.text.DateFormat;
+import java.util.Date;
 import java.util.List;
 
 @RunWith(SpringRunner.class)
@@ -23,7 +26,10 @@ public class UserInfoRepositoryTests {
 
 	@Test
 	public void testUserInfo()  {
-		List<UserInfo> userInfos=userDetailRepository.findUserInfo("打球");
+
+		userDetailRepository.save(new UserDetail("2", "New York Address", "Jogging"));
+
+		List<UserInfo> userInfos=userDetailRepository.findUserInfo("Jogging");
 		for (UserInfo userInfo:userInfos){
 			System.out.println("addree: "+userInfo.getAddress());
 		}
